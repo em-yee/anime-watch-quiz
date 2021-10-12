@@ -1,0 +1,65 @@
+/* Title font: PT Serif
+p font: PT Sans */
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+  margin: 0;
+  width: 100%;
+}
+
+.container {
+  background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
+  width: 100vw;
+  height: 100vh;
+  font-family: 'PT Sans', sans-serif;
+  color: black;
+}
+
+#title{
+  font-family: 'PT Serif', serif;
+  z-index: 2;
+  color: black;
+  text-align: start;
+  /* font-weight: bold; */
+  font-size: 30px;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  overflow: hidden;
+  position: fixed;
+  /* top: 56px; */
+  /* left: 0; */
+  padding: 10px;
+
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right {
+  float: right;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
