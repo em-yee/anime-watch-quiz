@@ -41,10 +41,10 @@ imageElement.src = 'https://cdn.myanimelist.net/s/common/uploaded_files/14829659
 btnElement.setAttribute('href', '#')
 
 //APPLYING TEXT TO CARD
-headElement.innerText = '`${anime[x].name}`' //`${anime[x].name}`
-pElement.innerText = '`${quoteapi[x].quote}`' //`${quoteapi[x].quote}`
+headElement.innerText = 'TITLE' //`${anime[x].name}`
+pElement.innerText = '"CLEVER QUOTE"' //`${quoteapi[x].quote}`
 btnElement.innerText = 'More info'
-flipCardBack.innerText = 'help'
+flipCardBack.innerText = 'EXAMPLE SYNOPSIS Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad repudiandae commodi sunt eligendi fugit totam ex reiciendis atque iure, nostrum aliquam, odit nemo accusamus culpa quidem accusantium eius autem.' //`${anime.synopsis}`
 
 // card flipping/button functionality
 flipCardInner.addEventListener('click', ()=>{
