@@ -7,6 +7,7 @@ p font: PT Sans */
 
 .myContainer {
   background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
+  
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -45,10 +46,10 @@ p font: PT Sans */
   width: 100%;
   background-color: #fff;
   overflow: hidden;
-  /*position: fixed;*/
-  position: relative;
+  position: fixed;
   padding: 20px;
   z-index: 2;
+  top: 0;
 }
 
 a.header {
@@ -81,14 +82,21 @@ a.header {
   padding-top: 102px;
 }
 
+.content-wrapper{
+  position: absolute;
+  width: 100%;
+  top: 10.5%;
+}
+
 .genre-list-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 1200px;
-  max-width: 80%;
+  /* min-width: 1200px;
+  max-width: 80%; */
+  width: 80vw;
   background-color: white;
   z-index: 1;
   padding: 1.6rem 2rem 2rem 2rem;
