@@ -125,3 +125,19 @@ a.header {
   cursor: pointer;
   opacity: 1;
 }
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+

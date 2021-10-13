@@ -1,14 +1,3 @@
-// <div class="card" style="width: 18rem;">
-//   <div>       
-//   <img class="card-img-top" src="..." alt="Card image cap">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" class="btn btn-primary">Go somewhere</a>
-//   </div>
-//   </div>
-// </div>
-
 //DOM CREATION
 let bodyElement = document.body
 let flipCardContainer = document.getElementById('flip-card-container');
@@ -25,10 +14,13 @@ function createCards (objectList){
         let headElement = document.createElement('h5')
         let pElement = document.createElement('p')
         let btnElement = document.createElement('button')
+        let backText = document.createElement('div')
+        let infoContainerText = document.createElement('div')
 
         flipCardFront.className = 'flip-card-front card-face'
         imageContainer.className = 'image-container'
-        infoContainer.className = 'info-container'
+        infoContainer.className = 'info-container fixed-bottom'
+        infoContainerText.className = 'info-container-text'
         imageElement.className = 'image'
         headElement.className = 'heading'
         pElement.className = 'paragraph'
@@ -36,49 +28,25 @@ function createCards (objectList){
         flipCard.className = 'flip-card'
         flipCardInner.className = 'flip-card-inner'
         flipCardBack.className = 'flip-card-back card-face'
+        backText.className = 'back-text'
 
         imageElement.src = object['image'];
-
         headElement.innerText = object['title'];
         pElement.innerText = object['quote'];
-        flipCardBack.innerText = object['synopsis'];
+
+        backText.innerText = object['synopsis'];
 
         flipCardContainer.appendChild(flipCard);
         flipCardFront.append(imageContainer, infoContainer);
         imageContainer.appendChild(imageElement);
-        infoContainer.append(headElement, pElement);
+        infoContainer.append(infoContainerText)
+        infoContainerText.append(headElement, pElement);
         flipCard.append(flipCardInner);
         flipCardInner.append(flipCardFront, flipCardBack);
+        flipCardBack.append(backText)
 
         flipCardInner.addEventListener('click', ()=>{
             flipCardInner.classList.toggle('is-flipped')
         })
     }
 }
-
-
-//APPLYING CLASS NAMES TO DOM ELEMENTS/CONTAINERS
-
-
-//Applying source (api needed)
-
-
-//APPLYING TEXT TO CARD
-
-
-// card flipping/button functionality
-
-
-//APPENDING CARD TOGETHER
-
-
-
-
-
-
-
-
-
-
-
-
