@@ -1,0 +1,120 @@
+/* Title font: PT Serif
+p font: PT Sans */
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+.myContainer {
+  background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
+  height: 2000px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: black;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100%;
+}
+
+#title {
+  font-family: 'PT Serif', serif;
+  z-index: 2;
+  color: black;
+  text-align: start;
+  /* font-weight: bold; */
+  font-size: 30px;
+  height: 100%;
+  position: relative;
+}
+
+.text {
+  font-family: 'PT Sans', sans-serif;
+  /* z-index: 2; */
+  color: black;
+  text-align: start;
+  /* font-weight: bold; */
+  font-size: 20px;
+}
+
+.header {
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  /*position: fixed;*/
+  position: relative;
+  padding: 20px;
+  z-index: 2;
+}
+
+a.header {
+  text-decoration: none;
+  color: black;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right {
+  float: right;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.genre-list-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 1200px;
+  max-width: 80%;
+  background-color: white;
+  z-index: 1;
+  padding: 1.6rem 2rem 2rem 2rem;
+  margin-top: 3rem;
+  border-radius: 20px;
+}
+
+.genre-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.4rem 0;
+  width: 100%;
+}
+
+.genre-item {
+  padding: 0.2rem 1rem;
+  text-align: center;
+  margin: 0 0.2rem;
+  min-width: 150px;
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+
+.genre-item:hover {
+  cursor: pointer;
+  opacity: 1;
+}
