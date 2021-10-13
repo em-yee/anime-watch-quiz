@@ -50,8 +50,8 @@
 .flip-card-front {
   background-image: linear-gradient(
       to bottom right,
-      var(--secondary),
-      var(--primary)
+      var(--light),
+      var(--dark)
   );
 }
 
@@ -62,8 +62,8 @@
   align-items: center;
   background-image: linear-gradient(
       to top right,
-      var(--primary),
-      var(--secondary)
+      var(--dark),
+      var(--light)
   );
   transform: rotateY(180deg);
 }
