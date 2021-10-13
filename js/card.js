@@ -11,7 +11,7 @@ function createCards (objectList){
         let imageContainer = document.createElement('div')
         let infoContainer = document.createElement('div')
         let imageElement = document.createElement('img')
-        let headElement = document.createElement('h5')
+        let headElement = document.createElement('h3')
         let pElement = document.createElement('p')
         let btnElement = document.createElement('button')
         let backText = document.createElement('div')
@@ -25,7 +25,7 @@ function createCards (objectList){
         headElement.className = 'heading'
         pElement.className = 'paragraph'
         btnElement.className = 'btn'
-        flipCard.className = 'flip-card'
+        flipCard.className = 'flip-card mx-5'
         flipCardInner.className = 'flip-card-inner'
         flipCardBack.className = 'flip-card-back card-face'
         backText.className = 'back-text'
