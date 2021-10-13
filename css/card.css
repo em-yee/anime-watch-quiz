@@ -1,0 +1,73 @@
+/* front of card info */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* temp colors */
+:root {
+  --primary: #03045e;
+  --secondary: #00b4d8;
+  --dark: #212121;
+  --light: #f3f3f3;
+}
+
+.flip-card {
+  margin: 1rem auto 0;
+  padding: 1rem;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  color: white;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--secondary),
+      var(--primary)
+  );
+}
+
+.flip-card-back {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to top right,
+      var(--primary),
+      var(--secondary)
+  );
+  transform: rotateY(180deg);
+}
+
+.image-container img {
+  width: 100%;
+}
