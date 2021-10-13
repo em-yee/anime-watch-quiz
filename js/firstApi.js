@@ -1,5 +1,5 @@
 
-function firstApi (genreNumber) {
+function firstApi (genreNumber, cardNumber = 6) {
     const animeRecommendationObjectList = [];
     
     genreNumber = genreNumber.toString();
@@ -9,7 +9,7 @@ function firstApi (genreNumber) {
         
         let dataArray = data['anime'];
         // console.log(dataArray);
-        for (dataArrayIndex = 0; dataArrayIndex <= 2; dataArrayIndex ++){
+        for (dataArrayIndex = 0; dataArrayIndex <= cardNumber; dataArrayIndex ++){
             let animeRecommendationTitle = dataArray[dataArrayIndex]['title'];
             // console.log(animeRecommendationTitle);
             // console.log(typeof animeRecommendationTitle);
@@ -41,7 +41,7 @@ function firstApi (genreNumber) {
                     
                     let animeRecommendationObject = {title: animeRecommendationTitle, image: animeRecommendationImageURL, synopsis: animeRecommendationSynopsis, quote: animeRecommendationQuote};
                     animeRecommendationObjectList.push(animeRecommendationObject);
-                    if (dataArrayIndex === 2){
+                    if (dataArrayIndex === cardNumber){
                         console.log('Result in firstApi.js');
                         console.log(animeRecommendationObjectList);
                         createCards(animeRecommendationObjectList);
@@ -57,7 +57,7 @@ function firstApi (genreNumber) {
                 let animeRecommendationObject = {title: animeRecommendationTitle, image: animeRecommendationImageURL, synopsis: animeRecommendationSynopsis, quote: animeRecommendationQuote}
                 // console.log(animeRecommendationObject);
                 animeRecommendationObjectList.push(animeRecommendationObject)
-                if (dataArrayIndex === 2){
+                if (dataArrayIndex === cardNumber){
                     console.log('Result in firstApi.js');
                     console.log(animeRecommendationObjectList);
                     createCards(animeRecommendationObjectList);

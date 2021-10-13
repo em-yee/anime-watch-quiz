@@ -13,6 +13,7 @@
 let bodyElement = document.body
 let flipCardContainer = document.getElementById('flip-card-container');
 function createCards (objectList){
+    flipCardContainer.innerHTML = '';
     for (object of objectList){
         let flipCard = document.createElement('div')
         let flipCardInner = document.createElement('div')
