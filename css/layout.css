@@ -7,7 +7,7 @@ p font: PT Sans */
 
 .myContainer {
   background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
-  height: 2000px;
+  
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
