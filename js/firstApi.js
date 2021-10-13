@@ -32,6 +32,7 @@ function firstApi (genreNumber = 7) {
                 .done(response => {
                     console.log("searching api");
                     animeSearches[animeRecommendationTitle] = response[0]['quote'];
+                    // console.log(object);
                     localStorage['animeSearches'] = JSON.stringify(animeSearches);
                     animeRecommendationQuote = animeSearches[animeRecommendationTitle];
                     
