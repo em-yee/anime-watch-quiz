@@ -51,21 +51,22 @@
 .flip-card-back {
   overflow: auto;
   display: flex;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-      to top right,
-      var(--dark),
-      var(--light)
-  );
+  background: -webkit-linear-gradient(top, #001c55 50px, black 1000px);
   transform: rotateY(180deg);
-  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 }
 
 .back-text{
   height: 95%;
+  padding: 1rem;
 }
+.flip-card-back::-webkit-scrollbar {
+  display: none;
+}
+
 .image-container img{
   width: 100%;
   height: 100%;
@@ -95,5 +96,3 @@ font-weight: bold;
       var(--dark)
   );
 }
-
-

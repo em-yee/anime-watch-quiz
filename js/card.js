@@ -32,8 +32,7 @@ function createCards (objectList){
 
         imageElement.src = object['image'];
         headElement.innerText = object['title'];
-        pElement.innerText = object['quote'];
-
+        pElement.innerText = `"${object['quote']}"`;
         backText.innerText = object['synopsis'];
 
         flipCardContainer.appendChild(flipCard);
