@@ -1,13 +1,9 @@
-/* Title font: PT Serif
-p font: PT Sans */
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
 .myContainer {
   background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
-  
+  height: 2000px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -15,6 +11,7 @@ p font: PT Sans */
 }
 
 .content-wrapper {
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -43,13 +40,15 @@ p font: PT Sans */
 }
 
 .header {
-  width: 100%;
+  width: 100vw;
   background-color: #fff;
   overflow: hidden;
   position: fixed;
   padding: 20px;
   z-index: 2;
   top: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 
 a.header {
@@ -68,19 +67,6 @@ a.header {
   border-radius: 4px;
 }
 
-.header-right {
-  float: right;
-}
-
-.sticky {
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 102px;
-}
 
 .content-wrapper{
   position: absolute;
@@ -125,19 +111,3 @@ a.header {
   cursor: pointer;
   opacity: 1;
 }
-
-.card-container{
-  display: flex;
-  flex-direction: row;
-}
-
-
-
-
-
-
-
-
-
-
-

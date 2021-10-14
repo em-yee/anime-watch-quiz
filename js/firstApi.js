@@ -1,5 +1,4 @@
-
-function firstApi (genreNumber, cardNumber = 6) {
+function firstApi (genreNumber, cardNumber = 5) {
     const animeRecommendationObjectList = [];
     
     genreNumber = genreNumber.toString();
@@ -27,6 +26,8 @@ function firstApi (genreNumber, cardNumber = 6) {
             // console.log(`line 27: ${animeRecommendationTitle}`);
             animeSearches = JSON.parse(animeSearches);
             // console.log(animeSearches);
+            // console.log(animeRecommendationTitle);
+            
             
             // if local storage does not hold the quote
             if (!animeSearches[animeRecommendationTitle]) {
@@ -47,6 +48,26 @@ function firstApi (genreNumber, cardNumber = 6) {
                         createCards(animeRecommendationObjectList);
                     }
                     
+                })
+                .catch(function(error) {
+                    $.get(`https://animechan.vercel.app/api/random`)
+                    .done(data => {
+                        console.log("searching random api");
+                        console.log(`could not find title in database: ${error}`);
+                        // console.log(`line 35: ${animeRecommendationTitle}`);
+                        animeSearches[animeRecommendationTitle] = data['quote'];
+                        // console.log(object);
+                        localStorage['animeSearches'] = JSON.stringify(animeSearches);
+                        animeRecommendationQuote = animeSearches[animeRecommendationTitle];
+                        
+                        let animeRecommendationObject = {title: animeRecommendationTitle, image: animeRecommendationImageURL, synopsis: animeRecommendationSynopsis, quote: animeRecommendationQuote};
+                        animeRecommendationObjectList.push(animeRecommendationObject);
+                        if (dataArrayIndex === cardNumber){
+                            console.log('Result in firstApi.js');
+                            console.log(animeRecommendationObjectList);
+                            createCards(animeRecommendationObjectList);
+                    }
+                    })
                 })
             }// if local storage does hold the quote
             else{
@@ -70,4 +91,3 @@ function firstApi (genreNumber, cardNumber = 6) {
     
 
     }
-
