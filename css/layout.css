@@ -41,7 +41,7 @@
 
 .header {
   width: 100vw;
-  background-color: #fff;
+  background-color: #edfafd;
   overflow: hidden;
   position: fixed;
   padding: 20px;
@@ -83,7 +83,7 @@ a.header {
   /* min-width: 1200px;
   max-width: 80%; */
   width: 80vw;
-  background-color: white;
+  background-color: #edfafd;
   z-index: 1;
   padding: 1.6rem 2rem 2rem 2rem;
   margin-top: 3rem;
@@ -102,7 +102,7 @@ a.header {
   padding: 0.2rem 1rem;
   text-align: center;
   margin: 0 0.2rem;
-  min-width: 150px;
+  max-width: 10rem;
   opacity: 0.6;
   transition: all 0.2s ease-in-out;
 }
