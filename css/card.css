@@ -51,7 +51,7 @@
 .flip-card-back {
   overflow: auto;
   display: flex;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   align-items: center;
   background: -webkit-linear-gradient(top, #001c55 50px, black 1000px);
