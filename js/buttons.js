@@ -6,24 +6,29 @@ let dramaButton = document.querySelector('#b8');
 let adventureButton = document.querySelector('#b2');
 
 
-numberOfCardsToDisplay = 3;
 
 actionButton.addEventListener('click', () => {
-    firstApi(1, 6)
+    firstApi(1, numberOfCardsToDisplay)
+
 })
 console.log(actionButton);
 romanceButton.addEventListener('click', () => {
-    firstApi(22, 6)
+    firstApi(22, numberOfCardsToDisplay)
+
 })
 comedyButton.addEventListener('click', () => {
-    firstApi(4, 6)
+    firstApi(4, numberOfCardsToDisplay)
+
 })
 fantasyButton.addEventListener('click', () => {
-    firstApi(10, 6)
+    firstApi(10, numberOfCardsToDisplay)
+
 })
 dramaButton.addEventListener('click', () => {
-    firstApi(8, 6)
+    firstApi(8, numberOfCardsToDisplay)
+
 })
 adventureButton.addEventListener('click', () => {
-    firstApi(2, 6)
+    firstApi(2, numberOfCardsToDisplay)
+
 })
