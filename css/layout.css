@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
 .myContainer {
-
   background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
   height: 2000px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
   color: black;
-  border: red 5px solid;
 }
 
 .content-wrapper {
@@ -43,7 +40,6 @@
 }
 
 .header {
-  border: rgb(175, 0, 160) 5px solid;
   width: 100vw;
   background-color: #fff;
   overflow: hidden;
@@ -71,19 +67,6 @@ a.header {
   border-radius: 4px;
 }
 
-.header-right {
-  /* float: right; */
-}
-
-.sticky {
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 102px;
-}
 
 .content-wrapper{
   position: absolute;
