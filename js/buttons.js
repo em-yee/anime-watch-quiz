@@ -5,11 +5,13 @@ let fantasyButton = document.querySelector('#b10');
 let dramaButton = document.querySelector('#b8');
 let adventureButton = document.querySelector('#b2');
 
+
 numberOfCardsToDisplay = 3;
 
 actionButton.addEventListener('click', () => {
     firstApi(1, 6)
 })
+console.log(actionButton);
 romanceButton.addEventListener('click', () => {
     firstApi(22, 6)
 })
