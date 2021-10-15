@@ -18,6 +18,8 @@ function createCards (objectList){
         let backText = document.createElement('div')
         let infoContainerText = document.createElement('div')
 
+        let arrow = document.createElement('i')
+
         //APPLYING ELEMENT'S CLASSES
         flipCardFront.className = 'flip-card-front card-face'
         imageContainer.className = 'image-container'
@@ -32,10 +34,13 @@ function createCards (objectList){
         flipCardBack.className = 'flip-card-back card-face'
         backText.className = 'back-text'
 
+        arrow.className = 'fas fa-redo'
+        arrow.setAttribute('style', "margin-top:9px; position:absolute; right:43%; font-size: 2rem; opacity: 70%; text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;")
+
         //APPLYING API TO THE CARD
         imageElement.src = object['image'];
         headElement.innerText = object['title'];
-        pElement.innerText = `"${object['quote']}"`;
+        pElement.innerText = `"${object['quote']}"\n`;
         backText.innerText = object['synopsis'];
 
         //APPENDING CARD TOGETHER AND ATTACHING IT IN HTML
@@ -48,6 +53,7 @@ function createCards (objectList){
         flipCardInner.append(flipCardFront, flipCardBack);
         flipCardBack.append(backText)
 
+        imageContainer.append(arrow)
         //ONCLICK EVENT TO FLIP CARD
         flipCardInner.addEventListener('click', ()=>{
             flipCardInner.classList.toggle('is-flipped')

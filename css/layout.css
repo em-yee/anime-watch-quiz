@@ -19,7 +19,7 @@
 }
 
 #title {
-  font-family: 'PT Serif', serif;
+  font-family: 'PT Serif', sans-serif;
   z-index: 2;
   color: black;
   text-align: start;
@@ -27,6 +27,9 @@
   font-size: 30px;
   height: 100%;
   position: relative;
+}
+h3{
+  font-family: 'PT Serif', sans-serif;
 }
 
 .text {
@@ -112,6 +115,7 @@ a.header {
   max-width: 10rem;
   opacity: 0.6;
   transition: all 0.2s ease-in-out;
+  border-radius: 10px;
 }
 
 .genre-item:hover {
@@ -156,3 +160,47 @@ a.header {
       line-height: 25px;
       border-radius: 4px;
     }
+
+
+
+/* DROPDOWN MENU */
+.dropbtn {
+  background-color: #24dbff;
+  color: rgb(0, 0, 0);
+  padding: 3px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.8;
+  
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  opacity: 90%;
+  min-width: 66px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: rgb(189, 189, 189);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  opacity: 1;
+}
+
+
