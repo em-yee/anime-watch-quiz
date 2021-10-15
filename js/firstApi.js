@@ -5,6 +5,13 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
     const rawResponse = await fetch(`https://api.jikan.moe/v3/genre/anime/${genreNumber}/1`);
     const parsedResponse = await rawResponse.json();
     const animeListResponse = parsedResponse.anime;
+    // shuffling the cards array so the result differ each time you click the button
+    for (x = 0; x < animeListResponse.length; x++){
+        let randomCardNum = Math.floor(Math.random() * animeListResponse.length)
+        let givenX = animeListResponse[x];
+        animeListResponse[x] = animeListResponse[randomCardNum];
+        animeListResponse[randomCardNum] = givenX;
+    }
     const animeList = [];
     let index = 0;
     // looping through each object in the response from the first api
@@ -70,13 +77,7 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
         // pushing animeRecommendation object to the array which will be used to call the createCards function once it is complete
         animeList.push(animeRecommendation);
     }
-    // shuffling the cards array so the result differ each time you click the button
-    for (x = 0; x < animeList.length; x++){
-        randomCardNum = Math.floor(Math.random() * animeList.length)
-        let givenX = animeList[x];
-        animeList[x] = animeList[randomCardNum];
-        animeList[randomCardNum] = givenX;
-    }
+
     // sending results to print the cards
     createCards(animeList);
 }
