@@ -11,7 +11,6 @@ actionButton.addEventListener('click', () => {
     firstApi(1, numberOfCardsToDisplay)
 
 })
-console.log(actionButton);
 romanceButton.addEventListener('click', () => {
     firstApi(22, numberOfCardsToDisplay)
 
