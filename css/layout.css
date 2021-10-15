@@ -3,15 +3,13 @@
 
 .myContainer {
   background: -webkit-linear-gradient(top, #03045e 200px, black 850px);
-  height: 200vh;
-  height: 2000px;
+  min-height: 90vh;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
   color: black;
 }
 
-.content-wrapper {
+.content-container {
   width: 100vw;
   display: flex;
   align-items: center;
@@ -79,7 +77,6 @@ a.header {
 
 }
 
-
 .content-wrapper{
   position: absolute;
   width: 100%;
@@ -92,13 +89,11 @@ a.header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* min-width: 1200px;
-  max-width: 80%; */
   width: 80vw;
   background-color: #edfafd;
   z-index: 1;
   padding: 1.6rem 2rem 2rem 2rem;
-  margin-top: 3rem;
+  margin-top: 7.7rem;
   border-radius: 20px;
 }
 
