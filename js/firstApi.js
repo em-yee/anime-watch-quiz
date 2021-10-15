@@ -59,7 +59,6 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
         if(!quote) {
             const randomQuoteIndex = Math.floor(Math.random()*(randomQuoteArray.length));
             quote = randomQuoteArray[randomQuoteIndex];
-            localStorage.setItem(item.title, JSON.stringify(quote));
         }
         // creating object and filling with data required for cards
         let animeRecommendation = {
