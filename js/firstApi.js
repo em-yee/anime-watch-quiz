@@ -5,7 +5,6 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
     const rawResponse = await fetch(`https://api.jikan.moe/v3/genre/anime/${genreNumber}/1`);
     const parsedResponse = await rawResponse.json();
     const animeListResponse = parsedResponse.anime;
-
     const animeList = [];
     let index = 0;
     // looping through each object in the response from the first api
@@ -14,23 +13,45 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
         if(index > numberOfCardsToDisplay) {
             break;
         }
-        // checking local storage and setting stored quote to either the stored value or null
-        const storedQuote = localStorage.getItem(item.title) || null;
+        // checking local storage and setting animeSearches to either the stored JSON string (local storage is always stored in JSON format so animeSearches is a string if it exists) or {} in order to initialize the animeSearches object
+        let animeSearches = localStorage['animeSearches'] || "{}";
+        console.log('typeof animeSearches', typeof animeSearches);
+        // parsing animeSearches converts the JSON string into an object
+        animeSearches = JSON.parse(animeSearches);
+        // console.log('1st animeSearches', animeSearches);
+        // setting storedQuote to the quote in animeSearches if the quote exists or null if not
+        const storedQuote = animeSearches[item.title] || null;
+        // declaring quoteResponse and setting it to undefined in order to scope it to be used in either event of a stored quote or not being present
         let quoteResponse;
+        // console.log('quoteResponse', quoteResponse);
         // if there is no stored value then the 2nd api will be called
         if (!storedQuote) {
             // using try/catch because of the errors returned from the 2nd api
             try {
-                const _quoteResponse = await fetch(`https://animechan.vercel.app/api/quotes/anime title=${item.title.toLowerCase()}`);
+                console.log(item.title);
+                const _quoteResponse = await fetch(`https://animechan.vercel.app/api/quotes/anime?title=${item.title.toLowerCase()}`);
                 quoteResponse = await _quoteResponse.json();
+                // console.log(quoteResponse);
                 // storing 2nd api quote to stored
-                localStorage.setItem(item.title, JSON.stringify(quoteResponse));
-            } catch(err) {
-                console.log('err', err);
+                console.log('using 2nd api to set quote');
+                animeSearches[`${item.title}`] = quoteResponse;
+                console.log('assigning quote to animeSearches', animeSearches);
+                localStorage.setItem('animeSearches', JSON.stringify(animeSearches));
+            } 
+            // this is set to handle the error in case the api call doesnt return anything usefull (can be 404 if the title is not in there database or 429 if theres been too many requests)
+            catch(errorMessage) {
+                console.log('error', errorMessage);
             }
-            // if there is a stored quote then the quote response is the stored quote
+        // if there is a stored quote then the quote response is the stored quote
         } else {
-            quoteResponse = JSON.parse(storedQuote);
+            // console.log("stored quote type", typeof storedQuote);
+            if (typeof storedQuote != "object"){
+                quoteResponse = JSON.parse(storedQuote);
+            }
+            else {
+                quoteResponse = storedQuote
+            }
+            console.log('quoteResponse if stored quote', quoteResponse);
         }
         // setting quote to the quote response and progressively looking deeper into the quote response, because the quoteResponse is not always the same data type b/c it could be just a string or an object or null
         let quote = quoteResponse && quoteResponse[0] && quoteResponse[0]['quote'];
@@ -50,7 +71,6 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
         // pushing animeRecommendation object to the array which will be used to call the createCards function once it is complete
         animeList.push(animeRecommendation);
     }
-
     // shuffling the cards array so the result differ each time you click the button
     for (x = 0; x < animeList.length; x++){
         randomCardNum = Math.floor(Math.random() * animeList.length)
@@ -58,6 +78,6 @@ async function firstApi(genreNumber, numberOfCardsToDisplay) {
         animeList[x] = animeList[randomCardNum];
         animeList[randomCardNum] = givenX;
     }
-    
+    // sending results to print the cards
     createCards(animeList);
 }
